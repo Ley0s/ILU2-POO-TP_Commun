@@ -1,16 +1,22 @@
 package model;
 
-import java.time.LocalDate;
-
-public class Reservation {
-    protected LocalDate date;
-
-    public Reservation(LocalDate dateReservation) {
-        this.date = dateReservation;
-    }
-
-    @Override
-    public String toString() {
-        return "Le " + date.getDayOfMonth() + "/" + date.getMonthValue();
-    }
+public abstract class Reservation {
+	//Attributs
+	private int jour;
+	private int mois;
+	
+	protected Reservation(int jour, int mois) {
+		this.jour = jour;
+		this.mois = mois;
+	}
+	
+	public int getMois() {
+		return mois;
+	}
+	
+	public int getJour() {
+		return jour;
+	}
+	
+	public abstract String toString();
 }
