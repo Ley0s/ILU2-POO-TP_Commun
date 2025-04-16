@@ -1,19 +1,21 @@
 package model;
 
-public abstract class Formulaire <T extends Reservation> {
-	protected T reservation;
+public abstract class Formulaire {
+	private int jour;
+	private int mois;
 	private int indentification;
 	
-	protected Formulaire(T Reservation) {
-		this.reservation = reservation;
+	protected Formulaire(int jour, int mois) {
+		this.jour = jour;
+		this.mois = mois;
 	}
 
 	public int getJour() {
-		return reservation.getJour();
+		return jour;
 	}
 	
 	public int getMois() {
-		return reservation.getMois();
+		return mois;
 	}
 	
 	public void setIdentificationEntite(int identification) {

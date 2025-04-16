@@ -1,10 +1,10 @@
 package model;
 
 public class CalendrierAnnuel {
-	//Attributs
+	//Attributes
 	private Mois[] calendrier = new Mois[12];
 	
-	//Constructeur
+	//Constructor
 	public CalendrierAnnuel () {
 		calendrier[0] = new Mois("Janvier", 31);
         calendrier[1] = new Mois("Février", 28);
@@ -20,7 +20,7 @@ public class CalendrierAnnuel {
         calendrier[11] = new Mois("Décembre", 31);
 	}
 	
-	//Méthodes
+	//Methods
 	public boolean estLibre(int jour, int mois) {
 		return calendrier[mois-1].estLibre(jour-1);
 	}
@@ -33,13 +33,13 @@ public class CalendrierAnnuel {
 		return true;
 	}
 	
-	//Classes internes
+	//Intern classes
 	private static class Mois {
-		//Attributs
+		//Attributes
 		private String nom;
 		private boolean[] jours;
 		
-		//Constructeur
+		//Constructor
 		private Mois(String nom, int nbJours) {
 			this.nom = nom;
 			this.jours = new boolean[nbJours];
@@ -48,7 +48,7 @@ public class CalendrierAnnuel {
 			}
 		}
 		
-		//Méthodes
+		//Methods
 		private boolean estLibre(int jour) {
 			return jours[jour];
 		}

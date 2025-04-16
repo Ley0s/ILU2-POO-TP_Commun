@@ -1,7 +1,7 @@
 package model;
 
 public abstract class Reservation {
-	//Attributs
+	//Attributes
 	private int jour;
 	private int mois;
 	

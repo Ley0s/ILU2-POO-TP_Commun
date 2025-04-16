@@ -3,24 +3,27 @@ package model;
 public class CentraleReservation <E extends EntiteReservable<F>, F extends Formulaire> {
 
 	private E[] entites;
-	private int nb_entites = 0;
+	private int nbEntites = 0;
 	
 	public CentraleReservation(E[] entites) {
 		this.entites = entites;
 	}
 	
 	public int ajouterEntite(E entite) {
-		entites[nb_entites] = entite;
-		nb_entites++;
-		entite.setIdentification(nb_entites);
+		entites[nbEntites] = entite;
+		nbEntites++;
+		entite.setIdentification(nbEntites);
 		return entite.getIdentification();
 	}
 	
 	public int[] donnerPossibilites(F formulaire) {
-		int[] entitesLibres = new int[nb_entites];
-		for (int i=0; i<nb_entites; i++) {
+		int[] entitesLibres = new int[nbEntites];
+		for (int i=0; i<nbEntites; i++) {
 			if (entites[i].compatible(formulaire)) {
+				System.out.println(i);
+				System.out.println(entites[i].getIdentification());
 				entitesLibres[i] = entites[i].getIdentification();
+				System.out.println(entitesLibres[i]);
 			}
 			else {
 				entitesLibres[i] = 0;
